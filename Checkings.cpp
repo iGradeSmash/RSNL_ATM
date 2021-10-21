@@ -20,7 +20,7 @@ void Checkings::setWithdraw()
 
 	if (c_balance >= wdraw) {
 		c_balance = c_balance - wdraw;
-		cout << "Your updated Checkings balance is: $" << c_balance << endl;
+		cout << "Your New Checkings balance is: $" << c_balance << endl;
 	}
 	else {
 		cout << "Not able to withdraw $" << wdraw << " from account.";
@@ -37,20 +37,3 @@ void Checkings::setDeposit()
 	cout << "Your updated Checkings balance is: $" << c_balance << endl;
 }
 
-double Checkings::getTransfer() //returns transfer ammount
-{
-	double wdraw = 0;
-	cout << "Enter transfer amount: $";
-	cin >> wdraw;
-
-	if (c_balance >= wdraw) {
-		c_balance = c_balance - wdraw;
-		cout << "Your updated Checkings balance is: $" << c_balance << endl;
-		return wdraw;
-	}
-	else {
-		cout << "Not able to withdraw $" << wdraw << " from account.";
-		cout << "Not enough funds..." << endl;
-		return 0.0;
-	}
-}

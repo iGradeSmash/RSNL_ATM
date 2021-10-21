@@ -113,11 +113,11 @@ int main()
 			switch (accountChoice)
 			{
 			case 1:
-				cout << "Your avialable Checking balance is $" << checkObj.getBalance();
+				cout << "Your available Checking balance is $" << checkObj.getBalance();
 				break;
 
 			case 2:
-				cout << "Your avialable Savings balance is $" << savObj.getSavingsBalance();
+				cout << "Your available Savings balance is $" << savObj.getSavingsBalance();
 				break;
 
 			default:
