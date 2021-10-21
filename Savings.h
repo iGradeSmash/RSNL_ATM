@@ -11,7 +11,6 @@ public:
 	double getSavingsBalance() const;
 	void setWithdraw();
 	void setDeposit();
-	double getTransfer();
 
 };
 
