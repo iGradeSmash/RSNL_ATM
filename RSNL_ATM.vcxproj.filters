@@ -18,11 +18,23 @@
     <ClCompile Include="RSNL_ATM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Savings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Checkings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Account.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Savings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Checkings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Account.h">
       <Filter>Header Files</Filter>
     </ClInclude>

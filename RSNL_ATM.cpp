@@ -2,56 +2,147 @@
 //
 
 #include <iostream>
+#include <string>
+#include "Account.h"
+#include "Checkings.h"
+#include "Savings.h"
 using namespace std;
 
-int CustomerAccountNumber = 12345;
-int pinNumber = 54321;
-int AccountBalance = 0;
+// ---Function Prototypes ---
 
-bool ValidateCustomerDetails() {
+int mainMenu() { //Function for Main Menu 
 
-    int InputAccountNumber = -1;
-    int InputPinNumber = -1;
-    bool isAccountInvalid = true;
-    bool isPinInvalid = true;
+	int choice = 0;
 
-    cout << "Welcome!" << endl;
+	cout << "\n-----------------------------" << endl;
+	cout << "|Please Select Transaction Option.... |" << endl;
+	cout << "-----------------------------" << endl;
+	cout << "| 1. Deposit                |" << endl;
+	cout << "| 2. Withdraw               |" << endl;
+	cout << "| 3. Check Balance          |" << endl;
+	cout << "| 4. [Exit]                 |" << endl;
+	cout << "-----------------------------" << endl;
 
-    while (isAccountInvalid) {
+	cin >> choice;
+	return choice;
+}
 
-        cout << "Please enter your Bank account number: ";
-        cin >> InputAccountNumber;
+int main()
+{
+	//class-objects instantiation
+	Account accObj;
+	Checkings checkObj;
+	Savings savObj;
 
-        if (InputAccountNumber == CustomerAccountNumber) {
-            isAccountInvalid = false;
-        }
-        else {
-            cout << "Invalid Account Number! Try again." << endl;
-        }
-    }
-    int RetryCount = 3;
-    while (isPinInvalid && RetryCount) {
+	//accObj.login(); //call for login page
 
-        cout << "Enter your Customer PIN: ";
-        cin >> InputPinNumber;
+	accObj.setAccountName("Mark", "Brown"); //  Predefined Name
+	string fullName = accObj.getAccountName();
 
-        if (InputPinNumber == pinNumber) {
-            isPinInvalid = false;
-        }
-        else {
-            RetryCount--;
-            if (RetryCount)
-                cout << "Invalid Customer PIN number! Try again." << endl;
-            else
-            {
-                cout << "Your Account is Locked! 3 retry Reached! Try After some time." << endl;
-                return false;
-            }
+	cout << "-----------------------------" << endl;
+	cout << "|    Welcome, " << fullName << "    |" << endl;
+	cout << "-----------------------------" << endl;
 
-        }
+	bool isNotFinished = true;
+	int accountChoice = -1;
 
-    }
+	//Loop for Menu Unless Exit is Selected
+	do {
+		switch (mainMenu())
+		{
+			//Deposit Option
+		case 1:
+			cout << "-------------------------------------------------" << endl;
+			cout << "| Please Select Account Type... |" << endl;
+			cout << "-------------------------------------------------" << endl;
+			cout << "| 1. Checking                                   |" << endl;
+			cout << "| 2. Savings                                    |" << endl;
+			cout << "-------------------------------------------------" << endl;
 
-    return true;
+			cin >> accountChoice;
+			switch (accountChoice) { //Nested Switch Case 
+			case 1:
+				checkObj.setDeposit();
+				break;
+			case 2:
+				savObj.setDeposit();
+				break;
+			default:
+				cout << "Invalid choice! Please select again." << endl;
+				break;
+			}
+
+
+			break;
+
+			// Widthdraw Option
+		case 2:
+			cout << "-------------------------------------------------" << endl;
+			cout << "| Please Select Account Type...       |" << endl;
+			cout << "-------------------------------------------------" << endl;
+			cout << "| 1. Checking                                   |" << endl;
+			cout << "| 2. Savings                                    |" << endl;
+			cout << "-------------------------------------------------" << endl;
+
+			cin >> accountChoice;
+			switch (accountChoice) { //Nested Switch Case 
+			case 1:
+				checkObj.setWithdraw();
+				break;
+			case 2:
+				savObj.setWithdraw();
+				break;
+			default:
+				cout << "Invalid choice! Please select again." << endl;
+				break;
+			}
+
+			break;
+		case 3:
+
+			// Check Balance Option
+			cout << "-------------------------------------------------" << endl;
+			cout << "| Please Select Account Type...              |" << endl;
+			cout << "-------------------------------------------------" << endl;
+			cout << "| 1. Checking                                   |" << endl;
+			cout << "| 2. Savings                                    |" << endl;
+
+			cout << "-------------------------------------------------" << endl;
+
+			cin >> accountChoice;
+			switch (accountChoice)
+			{
+			case 1:
+				cout << "Your avialable Checking balance is $" << checkObj.getBalance();
+				break;
+
+			case 2:
+				cout << "Your avialable Savings balance is $" << savObj.getSavingsBalance();
+				break;
+
+			default:
+				cout << "Invalid choice! Please select again." << endl;
+				break;
+
+			}
+
+			break;
+
+			// EXIT OPTION
+		case 4:
+			cout << "Thank you for Choosing RSNL BANK" << endl;
+			isNotFinished = false;
+			break;
+
+		default:
+			cout << "Invalid choice! Please select again." << endl;
+			break;
+		}
+
+	} while (isNotFinished);
+
+
+	system("pause");
+	return 0;
 
 }
