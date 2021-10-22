@@ -2,15 +2,16 @@
 #include "iostream"
 
 
-void Savings::setSavingsBalance(double deposit) //This function sets a balance for the savings account and initialized the variable deposit.
+void Savings::setSavingsBalance() //This function sets a balance for the savings account and initialized the variable deposit.
 {
+	//double balance = s_balance;
 	s_balance = s_balance + deposit;
 }
 
 
 double Savings::getSavingsBalance() const //This function returns the balance on the savings account
 {
-	return s_balance;
+return s_balance;
 }
 
 void Savings::setWithdraw() // Sets a withdrawal amount for the savings account

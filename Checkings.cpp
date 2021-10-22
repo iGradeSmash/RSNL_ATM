@@ -1,9 +1,11 @@
 #include "Checkings.h"
+#include "Account.h"
 #include <iostream>
 
 
-void Checkings::setBalance(double deposit)
+void Checkings::setBalance()
 {
+	double deposit{};
 	c_balance = c_balance + deposit;
 }
 

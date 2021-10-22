@@ -6,6 +6,7 @@
 #include "Account.h"
 #include "Checkings.h"
 #include "Savings.h"
+#include "initialbalance.h"
 using namespace std;
 
 //Function Prototypes
@@ -33,6 +34,7 @@ int main()
 	Account accObj;
 	Checkings checkObj;
 	Savings savObj;
+	//initialbalance iniObj;
 
 	//accObj.login(); //call for login page
 
@@ -43,6 +45,10 @@ int main()
 	cout << "|    Welcome, " << fullName << "    |" << endl;
 	cout << "-----------------------------" << endl;
 
+	/*cout<<"Select account for setup starting balance:";
+	for (int i = 0; i < 2; i++) {
+		iniObj.setinitialbalance();
+	}*/
 	bool isNotFinished = true;
 	int accountChoice = -1;
 
@@ -50,6 +56,32 @@ int main()
 	do {
 		switch (mainMenu())
 		{
+			//Set Initial Balance Option
+		case 0:
+			cout << "-------------------------------------------------" << endl;
+			cout << "| Please Select Account Type... |" << endl;
+			cout << "-------------------------------------------------" << endl;
+			cout << "| 1. Checking                                   |" << endl;
+			cout << "| 2. Savings                                    |" << endl;
+			cout << "-------------------------------------------------" << endl;
+
+			cin >> accountChoice;
+			switch (accountChoice) { //Nested Switch Case 
+			case 1:
+				checkObj.setBalance();
+				break;
+			case 2:
+				savObj.setSavingsBalance();
+				break;
+			default:
+				cout << "Invalid choice! Please select again." << endl;
+				break;
+			}
+
+
+			break;
+			
+			
 			//Deposit Option
 		case 1:
 			cout << "-------------------------------------------------" << endl;
@@ -118,6 +150,7 @@ int main()
 
 			case 2:
 				cout << "Your available Savings balance is $" << savObj.getSavingsBalance();
+				//cout << "Your available Savings balance is $" <<savObj.getinitialbalance();
 				break;
 
 			default:
@@ -131,6 +164,7 @@ int main()
 			// EXIT OPTION
 		case 4:
 			cout << "Thank you for Choosing RSNL BANK" << endl;
+			cout << "Project By: Randale, Nicola, Lenice & Shoeb" << endl;
 			isNotFinished = false;
 			break;
 

@@ -62,4 +62,17 @@ bool Account::login() //Log In Validation With Predefined Information
 	return true;
 
 }
+//void Account::setinitialbalance() const;//This function sets a balance for the savings account and initialized the variable deposit.
+//{
+//	double deposit;
+//	double balance = s_balance;
+//	s_balance = s_balance + deposit;
+//}
+//
+//
+//double Account::getinitialbalance() //This function returns the balance on the savings account
+//{
+//	double balance;
+//	return balance;
+//}
 

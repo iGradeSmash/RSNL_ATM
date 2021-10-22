@@ -141,13 +141,17 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="Checkings.cpp" />
+    <ClCompile Include="initialbalance.cpp" />
     <ClCompile Include="RSNL_ATM.cpp" />
     <ClCompile Include="Savings.cpp" />
+    <ClCompile Include="Transaction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="Checkings.h" />
+    <ClInclude Include="initialbalance.h" />
     <ClInclude Include="Savings.h" />
+    <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
