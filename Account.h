@@ -14,7 +14,7 @@ private: //private interface of the derived object
 
 
 public: //public interface of the derived object
-public: 
+
 	void setAccountName(string firstname, string lastname);
 	string getAccountName();
 	void setAccountNumber(int accno);

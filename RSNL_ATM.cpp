@@ -131,6 +131,7 @@ int main()
 			// EXIT OPTION
 		case 4:
 			cout << "Thank you for Choosing RSNL BANK" << endl;
+			cout << "Project By: Randale, Nicola, Lenice & Shoeb" << endl;
 			isNotFinished = false;
 			break;
 
