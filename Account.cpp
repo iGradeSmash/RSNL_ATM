@@ -1,4 +1,4 @@
-// Gets account information
+// Pulls Account Information
 #include "Account.h"
 #include <string>
 #include <iostream>
@@ -22,7 +22,7 @@ void Account::setAccountNumber(int accno)
 	accNumber = accno;
 }
 
-bool Account::login() //loging verification with predefined credentials
+bool Account::login() //Log In Validation With Predefined Information 
 {
 	int givenAccountNumber = -1;
 	int givenPinNumber = -1;
@@ -35,14 +35,14 @@ bool Account::login() //loging verification with predefined credentials
 
 	while (isAccountInvalid) {
 
-		cout << "Please enter your account number: ";
+		cout << "Please Enter Your Account Number... ";
 		cin >> givenAccountNumber;
 
 		if (givenAccountNumber == accountNumber) {
 			isAccountInvalid = false;
 		}
 		else {
-			cout << "Invalid account number! Try again." << endl;
+			cout << "Invaid Entry!vPlease Check Account Number And Try Again..." << endl;
 		}
 	}
 
@@ -55,7 +55,7 @@ bool Account::login() //loging verification with predefined credentials
 			isPinInvalid = false;
 		}
 		else {
-			cout << "Invalid PIN number! Try again." << endl;
+			cout << "PIN Combination Invalid..." << endl;
 		}
 	}
 

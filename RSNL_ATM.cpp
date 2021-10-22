@@ -8,7 +8,7 @@
 #include "Savings.h"
 using namespace std;
 
-// ---Function Prototypes ---
+//Function Prototypes
 
 int mainMenu() { //Function for Main Menu 
 
